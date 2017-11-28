@@ -1,0 +1,21 @@
+<textarea id="t"></textarea>
+
+<style>
+#t {
+  height: calc(1em + 2px);
+  font-size: 1em;
+  outline: none;
+  resize: none;
+}
+</style>
+
+<script>
+const t = window.t
+
+t.addEventListener('input', function () {
+  const padding = parseInt(getComputedStyle(t).paddingTop) + parseInt(getComputedStyle(t).paddingBottom)
+
+  t.style.height = 'calc(1em + 2px)'
+  t.style.height = t.scrollHeight - padding + 'px'
+})
+</script>
